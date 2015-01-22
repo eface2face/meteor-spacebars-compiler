@@ -5,6 +5,7 @@ var BlazeTools = require("meteor-blaze-tools");
 
 var Package = {};
 var SpacebarsCompiler;
+var TemplateTag;
 
 SpacebarsCompiler = {};
 
