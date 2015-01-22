@@ -1,6 +1,9 @@
 {
   "name": "meteor-spacebars-compiler",
-  "repository": { "type": "git", "url": "https://github.com/eface2face/meteor-spacebars-compiler" },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eface2face/meteor-spacebars-compiler"
+  },
   "version": "1.0.0",
   "description": "",
   "main": "spacebars-compiler.js",
@@ -8,5 +11,11 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "^2.4.1",
+    "meteor-blaze-tools": "^1.0.0",
+    "meteor-html-tools": "^1.0.1",
+    "meteor-htmljs": "^1.0.0"
+  }
 }
