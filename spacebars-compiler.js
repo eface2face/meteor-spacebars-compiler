@@ -4,6 +4,7 @@ var HTMLTools = require("meteor-html-tools");
 var BlazeTools = require("meteor-blaze-tools"); 
 
 var Package = {};
+var SpacebarsCompiler;
 
 SpacebarsCompiler = {};
 
