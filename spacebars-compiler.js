@@ -1,11 +1,11 @@
-var _ = require("lodash");
-var HTML = require("meteor-htmljs");
-var HTMLTools = require("meteor-html-tools");
-var BlazeTools = require("meteor-blaze-tools"); 
+module.exports = function(Meteor) {
+  var HTML = Meteor.HTML;
+  var HTMLTools = Meteor.HTMLTools;
+  var BlazeTools = Meteor.BlazeTools;
 
-var Package = {};
-var SpacebarsCompiler;
-var TemplateTag;
+  var Package = {};
+  var SpacebarsCompiler;
+  var TemplateTag;
 
 SpacebarsCompiler = {};
 
@@ -1104,4 +1104,5 @@ SpacebarsCompiler._beautify = function (code) {
     return code;
   }
 };
-module.exports = SpacebarsCompiler;
+  Meteor.SpacebarsCompiler = SpacebarsCompiler;
+};
