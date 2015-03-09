@@ -669,7 +669,7 @@ RawReplacingVisitor.def({
 });
 
 SpacebarsCompiler.optimize = function (tree) {
-  tree = (new OptimizingVisitor).visit(tree);
+  //tree = (new OptimizingVisitor).visit(tree);
   tree = (new RawCompactingVisitor).visit(tree);
   tree = (new RawReplacingVisitor).visit(tree);
   return tree;
@@ -745,7 +745,8 @@ _.extend(CodeGen.prototype, {
           // Reactive attributes are already wrapped in a function,
           // and there's no fine-grained reactivity.
           // Anywhere else, we need to create a View.
-          code = 'Blaze.View(function () { return ' + code + '; })';
+          code = 'Blaze.View("lookup:' + tag.path.join('.') + '", ' +
+            'function () { return ' + code + '; })';
         }
         return BlazeTools.EmitCode(code);
       } else if (tag.type === 'INCLUSION' || tag.type === 'BLOCKOPEN') {
