@@ -669,7 +669,7 @@ RawReplacingVisitor.def({
 });
 
 SpacebarsCompiler.optimize = function (tree) {
-  //tree = (new OptimizingVisitor).visit(tree);
+  tree = (new OptimizingVisitor).visit(tree);
   tree = (new RawCompactingVisitor).visit(tree);
   tree = (new RawReplacingVisitor).visit(tree);
   return tree;
@@ -1090,7 +1090,7 @@ SpacebarsCompiler.codeGen = function (parseTree, options) {
 };
 
 SpacebarsCompiler._beautify = function (code) {
-  if (Package.minifiers) {
+  if (Package.minifiers && Package.minifiers.UglifyJSMinify) {
     var result = Package.minifiers.UglifyJSMinify(
       code,
       { fromString: true,
