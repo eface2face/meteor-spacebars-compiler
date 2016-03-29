@@ -7,7 +7,7 @@ module.exports = function(Meteor) {
   var Package = {};
   var SpacebarsCompiler;
   var TemplateTag;
-
+  var ReactComponentSiblingForbidder;
 SpacebarsCompiler = {};
 
 // A TemplateTag is the result of parsing a single `{{...}}` tag.
